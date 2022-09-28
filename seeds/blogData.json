@@ -1,0 +1,14 @@
+[
+  {
+    "blog_title": "Blog 1",
+    "blog_post": "this is a blog post"
+  },
+  {
+    "blog_title": "Blog 2",
+    "blog_post": "this is another blog post"
+  },
+  {
+    "blog_title": "Blog 3",
+    "blog_post": "And this is yet another blog post"
+  }
+]

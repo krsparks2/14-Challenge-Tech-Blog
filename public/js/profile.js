@@ -1,16 +1,13 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const recipe_name = document.querySelector('#recipe-name').value.trim();
-  const recipe_type = document.querySelector('#recipe-type').value.trim();
-  const recipe_desc = document.querySelector('#recipe-desc').value.trim();
-  const ingredients = document.querySelector('#recipe-ingredients').value.trim();
-  const recipe_directions = document.querySelector('#recipe-directions').value.trim();
+  const recipe_name = document.querySelector('#blog_title').value.trim();
+  const recipe_desc = document.querySelector('#blog_post').value.trim();
 
-  if (recipe_name && recipe_type && recipe_desc && ingredients && recipe_directions) {
-    const response = await fetch(`/api/recipes`, {
+  if (blog_title && blog_post) {
+    const response = await fetch(`/api/blog`, {
       method: 'POST',
-      body: JSON.stringify({ recipe_name, recipe_type , recipe_desc, ingredients, recipe_directions }),
+      body: JSON.stringify({ blog_title, blog_post }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -19,7 +16,7 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to create recipe');
+      alert('Failed to create blog post');
     }
   }
 };
